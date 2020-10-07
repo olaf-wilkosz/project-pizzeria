@@ -86,15 +86,14 @@
       console.log('thisProduct: ', thisProduct);
 
       /* find the clickable trigger (the element that should react to clicking) */
-      // const triggers = document.querySelectorAll(select.menuProduct.clickable);
-      const triggers = document.getElementsByClassName('product__header');
-      console.log('triggers: ', triggers);
+      const trigger = thisProduct.element.querySelector(select.menuProduct.clickable);
+      console.log('trigger: ', trigger);
 
       /* START: click event listener to trigger */
-      for (let trigger of triggers) {
-        trigger.addEventListener('click', function () {
-          console.log('clicked');
-        });
+
+      trigger.addEventListener('click', function (event) {
+        event.preventDefault();
+        console.log('clicked');
 
         /* prevent default action for event */
 
@@ -113,7 +112,7 @@
         /* END LOOP: for each active product */
 
         /* END: click event listener to trigger */
-      }
+      });
     }
   }
 
