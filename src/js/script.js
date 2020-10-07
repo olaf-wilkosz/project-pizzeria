@@ -60,8 +60,9 @@
       thisProduct.data = data;
 
       thisProduct.renderInMenu();
+      thisProduct.initAccordion();
 
-      console.log('new Product: ', thisProduct);
+      // console.log('new Product: ', thisProduct);
     }
 
     renderInMenu() {
@@ -78,7 +79,41 @@
 
       /* add element to menu */
       menuContainer.appendChild(thisProduct.element);
+    }
 
+    initAccordion() {
+      const thisProduct = this;
+      console.log('thisProduct: ', thisProduct);
+
+      /* find the clickable trigger (the element that should react to clicking) */
+      // const triggers = document.querySelectorAll(select.menuProduct.clickable);
+      const triggers = document.getElementsByClassName('product__header');
+      console.log('triggers: ', triggers);
+
+      /* START: click event listener to trigger */
+      for (let trigger of triggers) {
+        trigger.addEventListener('click', function () {
+          console.log('clicked');
+        });
+
+        /* prevent default action for event */
+
+        /* toggle active class on element of thisProduct */
+
+        /* find all active products */
+
+        /* START LOOP: for each active product */
+
+        /* START: if the active product isn't the element of thisProduct */
+
+        /* remove class active for the active product */
+
+        /* END: if the active product isn't the element of thisProduct */
+
+        /* END LOOP: for each active product */
+
+        /* END: click event listener to trigger */
+      }
     }
   }
 
@@ -86,7 +121,7 @@
     initMenu: function () {
       const thisApp = this;
 
-      console.log('thisApp.data: ', thisApp.data);
+      // console.log('thisApp.data: ', thisApp.data);
 
       for (let productData in thisApp.data.products) {
         new Product(productData, thisApp.data.products[productData]);
