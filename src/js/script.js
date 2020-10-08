@@ -62,7 +62,6 @@
       thisProduct.renderInMenu();
       thisProduct.initAccordion();
 
-      // console.log('new Product: ', thisProduct);
     }
 
     renderInMenu() {
@@ -83,34 +82,36 @@
 
     initAccordion() {
       const thisProduct = this;
-      console.log('thisProduct: ', thisProduct);
 
       /* find the clickable trigger (the element that should react to clicking) */
       const trigger = thisProduct.element.querySelector(select.menuProduct.clickable);
-      console.log('trigger: ', trigger);
 
       /* START: click event listener to trigger */
 
       trigger.addEventListener('click', function (event) {
-        event.preventDefault();
         console.log('clicked');
 
         /* prevent default action for event */
+        event.preventDefault();
 
         /* toggle active class on element of thisProduct */
+        thisProduct.element.classList.add('active');
 
         /* find all active products */
+        const allActiveProducts = document.querySelectorAll(select.all.menuProductsActive);
 
         /* START LOOP: for each active product */
+        for (let activeProduct of allActiveProducts) {
+          /* START: if the active product isn't the element of thisProduct */
+          if (activeProduct != thisProduct.element) {
 
-        /* START: if the active product isn't the element of thisProduct */
+            /* remove class active for the active product */
+            activeProduct.classList.remove('active');
 
-        /* remove class active for the active product */
-
-        /* END: if the active product isn't the element of thisProduct */
-
-        /* END LOOP: for each active product */
-
+            /* END: if the active product isn't the element of thisProduct */
+          }
+          /* END LOOP: for each active product */
+        }
         /* END: click event listener to trigger */
       });
     }
@@ -120,7 +121,7 @@
     initMenu: function () {
       const thisApp = this;
 
-      // console.log('thisApp.data: ', thisApp.data);
+      console.log('thisApp.data: ', thisApp.data);
 
       for (let productData in thisApp.data.products) {
         new Product(productData, thisApp.data.products[productData]);
