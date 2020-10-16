@@ -185,6 +185,7 @@
       thisProduct.cartButton.addEventListener('click', function (event) {
         event.preventDefault();
         thisProduct.processOrder();
+        thisProduct.addToCart;
       });
     }
 
@@ -261,6 +262,14 @@
       thisProduct.amountWidgetElem.addEventListener('updated', function () {
         thisProduct.processOrder();
       });
+    }
+
+    addToCart() {
+      const thisProduct = this;
+
+      console.log('thisProduct:', thisProduct);
+
+      app.cart.add(thisProduct);
     }
   }
 
@@ -353,15 +362,17 @@
     initActions() {
       const thisCart = this;
 
-      console.log('thisCart.dom.wrapper:', thisCart.dom.wrapper);
-
       thisCart.dom.toggleTrigger.addEventListener('click', function (event) {
         console.log('clicked');
         event.preventDefault();
         thisCart.dom.wrapper.classList.toggle(classNames.cart.wrapperActive);
-        console.log('thisCart.dom.wrapper:', thisCart.dom.wrapper);
       });
+    }
 
+    add(menuProduct) {
+      // const thisCart = this;
+
+      console.log('adding product', menuProduct);
     }
   }
 
