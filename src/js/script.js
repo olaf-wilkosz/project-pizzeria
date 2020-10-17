@@ -394,7 +394,8 @@
       thisCart.element = utils.createDOMFromHTML(generatedHTML);
       thisCart.dom.productList.appendChild(thisCart.element);
 
-      thisCart.products.push(menuProduct);
+      // thisCart.products.push(menuProduct);
+      thisCart.products.push(new CartProduct(menuProduct, thisCart.element));
       console.log('thisCart.products:', thisCart.products);
     }
   }
