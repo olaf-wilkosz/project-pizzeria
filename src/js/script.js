@@ -280,7 +280,6 @@
 
     addToCart() {
       const thisProduct = this;
-      console.log('addToCart');
 
       thisProduct.name = thisProduct.data.name;
       thisProduct.amount = thisProduct.amountWidget.value;
@@ -381,7 +380,6 @@
       const thisCart = this;
 
       thisCart.dom.toggleTrigger.addEventListener('click', function (event) {
-        console.log('clicked');
         event.preventDefault();
         thisCart.dom.wrapper.classList.toggle(classNames.cart.wrapperActive);
       });
