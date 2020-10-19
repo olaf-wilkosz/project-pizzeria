@@ -471,7 +471,6 @@
       });
 
       thisCartProduct.dom.wrapper.dispatchEvent(event);
-      console.log('remove');
     }
 
     initActions() {
