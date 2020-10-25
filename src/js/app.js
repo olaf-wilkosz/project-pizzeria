@@ -40,13 +40,12 @@ const app = {
     }
   },
 
-  initBooking: function() {
+  initBooking: function () {
     const thisApp = this;
 
-    const bookingWidget = document.querySelector(select.containerOf.booking);
-    console.log('bookingWidget:', bookingWidget);
+    const bookingWrapper = document.querySelector(select.containerOf.booking);
 
-    thisApp.booking = new Booking(bookingWidget);
+    thisApp.booking = new Booking(bookingWrapper);
   },
 
   activatePage: function (pageId) {
