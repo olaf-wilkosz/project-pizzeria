@@ -24,7 +24,7 @@ class DatePicker extends BaseWidget {
       minDate: thisWidget.minDate,
       maxDate: thisWidget.maxDate,
       'locale': {
-        'firstDayOfWeek': 1
+        'firstDayOfWeek': 1,
       },
       'disable': [
         function (date) {
