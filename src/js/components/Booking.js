@@ -1,5 +1,6 @@
 import { select, templates } from '../settings.js';
 import DatePicker from './DatePicker.js';
+import HourPicker from './HourPicker.js';
 import AmountWidget from './AmountWidget.js';
 
 class Booking {
@@ -29,7 +30,7 @@ class Booking {
     const thisBooking = this;
 
     thisBooking.datePicker = new DatePicker(thisBooking.dom.datePicker);
-    thisBooking.hourPicker = new DatePicker(thisBooking.dom.hourPicker);
+    thisBooking.hourPicker = new HourPicker(thisBooking.dom.hourPicker);
     thisBooking.peopleAmount = new AmountWidget(thisBooking.dom.peopleAmount);
     thisBooking.hoursAmount = new AmountWidget(thisBooking.dom.hoursAmount);
   }
