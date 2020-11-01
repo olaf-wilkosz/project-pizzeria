@@ -164,8 +164,11 @@ class Booking {
           tableId = parseInt(tableId);
         }
 
-        if ( !thisBooking.booked[thisBooking.date][thisBooking.hour].includes(tableId)) {
+
+
+        if (!thisBooking.booked[thisBooking.date][thisBooking.hour].includes(tableId)) {
           table.classList.toggle(classNames.booking.tableBooked);
+          console.log('thisBooking.hour:', thisBooking.hour);
         }
       });
     }
