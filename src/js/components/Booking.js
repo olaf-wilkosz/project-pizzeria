@@ -164,11 +164,15 @@ class Booking {
           tableId = parseInt(tableId);
         }
 
-
-
-        if (!thisBooking.booked[thisBooking.date][thisBooking.hour].includes(tableId)) {
+        if (
+          table.classList.contains(classNames.booking.tableBooked)
+          &&
+          thisBooking.booked[thisBooking.date][thisBooking.hour].includes(tableId)
+        ) {
+          console.log('This table is already booked!');
+          // alert('This table is already booked!');
+        } else {
           table.classList.toggle(classNames.booking.tableBooked);
-          console.log('thisBooking.hour:', thisBooking.hour);
         }
       });
     }
