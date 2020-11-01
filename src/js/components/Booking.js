@@ -135,6 +135,7 @@ class Booking {
 
     for (let table of thisBooking.dom.tables) {
       let tableId = table.getAttribute(settings.booking.tableIdAttribute);
+
       if (!isNaN(tableId)) {
         tableId = parseInt(tableId);
       }
@@ -142,7 +143,7 @@ class Booking {
       if (
         !allAvailable
         &&
-        thisBooking.booked[thisBooking.date][thisBooking.hour].includes(tableId) > -1
+        thisBooking.booked[thisBooking.date][thisBooking.hour].includes(tableId)// > -1
       ) {
         table.classList.add(classNames.booking.tableBooked);
       } else {
