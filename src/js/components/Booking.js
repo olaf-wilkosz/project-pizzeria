@@ -171,6 +171,10 @@ class Booking {
         ) {
           console.log('This table is already booked!');
           // alert('This table is already booked!');
+        } else if (typeof thisBooking.booked[thisBooking.date][thisBooking.hour] == 'undefined') {
+          table.classList.add(classNames.booking.tableBooked);
+        // } else if (???) {
+        //   table.classList.remove(classNames.booking.tableBooked);
         } else {
           table.classList.toggle(classNames.booking.tableBooked);
         }
