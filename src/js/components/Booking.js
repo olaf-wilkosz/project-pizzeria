@@ -194,7 +194,7 @@ class Booking {
     const booking = {
       date: thisBooking.datePicker.value,
       hour: thisBooking.hourPicker.value,
-      table: thisBooking.selectTable.tableId,
+      // table: thisBooking.???,
       duration: thisBooking.hoursAmount.value,
       ppl: thisBooking.peopleAmount.value,
       starters: [],
