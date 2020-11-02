@@ -156,36 +156,33 @@ class Booking {
   selectTable() {
     const thisBooking = this;
 
+
+
     for (let table of thisBooking.dom.tables) {
       table.addEventListener('click', function () {
-        // let tableId = table.getAttribute(settings.booking.tableIdAttribute);
 
-        // if (!isNaN(tableId)) {
-        //   tableId = parseInt(tableId);
-        // }
+        let tableId = table.getAttribute(settings.booking.tableIdAttribute);
 
-        if (
-          table.classList.contains(classNames.booking.tableBooked)
-          &&
-          // thisBooking.booked[thisBooking.date][thisBooking.hour].includes(tableId)
-          typeof thisBooking.booked[thisBooking.date][thisBooking.hour] != 'undefined'
-        ) {
-          console.log('This table is already booked!');
-          // alert('This table is already booked!');
-        } else if (
-          typeof thisBooking.booked[thisBooking.date][thisBooking.hour] == 'undefined'
-          &&
-          table.classList.contains(classNames.booking.tableBooked)
-        ) {
+        if (!isNaN(tableId)) {
+          tableId = parseInt(tableId);
+        }
+
+        if (typeof thisBooking.booked[thisBooking.date][thisBooking.hour] == 'undefined') {
+          if (table.classList.contains(classNames.booking.tableBooked)) {
+            table.classList.remove(classNames.booking.tableBooked);
+            console.log('Booking for the table is removed now.');
+          } else {
+            table.classList.add(classNames.booking.tableBooked);
+            console.log('Table is booked now.');
+          }
+        } else if (thisBooking.booked[thisBooking.date][thisBooking.hour].includes(tableId)) {
+          console.log('Table is already booked.');
+        } else if (table.classList.contains(classNames.booking.tableBooked)) {
           table.classList.remove(classNames.booking.tableBooked);
-        } else if (
-          typeof thisBooking.booked[thisBooking.date][thisBooking.hour] == 'undefined'
-          &&
-          !table.classList.contains(classNames.booking.tableBooked)
-        ) {
-          table.classList.add(classNames.booking.tableBooked);
+          console.log('Booking for the table is removed now.');
         } else {
-          table.classList.toggle(classNames.booking.tableBooked);
+          table.classList.add(classNames.booking.tableBooked);
+          console.log('Table is booked now.');
         }
       });
     }
