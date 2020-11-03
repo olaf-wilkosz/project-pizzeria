@@ -157,7 +157,10 @@ class Booking {
     const thisBooking = this;
 
     for (let table of thisBooking.dom.tables) {
-      table.addEventListener('click', function () {
+      table.addEventListener('click', function (event) {
+        event.preventDefault();
+
+        const tableClicked = table.getAttribute(settings.booking.tableIdAttribute);
 
         let tableId = table.getAttribute(settings.booking.tableIdAttribute);
 
@@ -182,6 +185,9 @@ class Booking {
           table.classList.add(classNames.booking.tableBooked);
           console.log('Table is booked now.');
         }
+
+        thisBooking.tableSelected = tableClicked;
+
       });
     }
   }
@@ -194,7 +200,7 @@ class Booking {
     const booking = {
       date: thisBooking.datePicker.value,
       hour: thisBooking.hourPicker.value,
-      // table: thisBooking.???,
+      table: thisBooking.tableSelected,
       duration: thisBooking.hoursAmount.value,
       ppl: thisBooking.peopleAmount.value,
       starters: [],
