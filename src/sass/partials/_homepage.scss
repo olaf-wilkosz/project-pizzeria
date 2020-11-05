@@ -115,3 +115,47 @@
     }
   }
 }
+
+.carousel {
+  width: 604px;
+  min-height: 193px;
+  margin: 48px 0;
+
+}
+
+.opinion-card {
+  position: relative;
+  display: inline-block;
+  min-height: 193px;
+
+  .opinion-image {
+    position: absolute;
+    width: 193px;
+  }
+
+  .opinion-text {
+    position: absolute;
+    padding-left: 230px;
+    width: 604px;
+    min-height: 193px;
+    margin: 12px 0 auto;
+    align-content: center;
+
+    p {
+      color: $color-dark;
+      font-family: Lato;
+      font-size: 14px;
+      font-weight: 400;
+      font-style: normal;
+      line-height: 23px;
+    }
+
+    p:first-of-type {
+      font-weight: 700;
+    }
+
+    p:last-of-type {
+      font-style: italic;
+    }
+  }
+}

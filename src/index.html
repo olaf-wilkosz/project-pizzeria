@@ -11,6 +11,7 @@
   <link href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
   <link rel="stylesheet" href="vendor/range-slider.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
   <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -85,75 +86,107 @@
           </div>
         </div>
         <div class="wrapper">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse nisl lectus, malesuada sit amet cursus
-          quis, scelerisque sit amet elit. Donec dui magna, blandit sit amet cursus sed, aliquam id dui. Curabitur id
-          fringilla ligula. Maecenas varius viverra felis, nec imperdiet nisi fermentum ut. Proin non condimentum augue.
-          Ut pretium nulla in neque eleifend, a pulvinar massa blandit. In ultricies mi sit amet suscipit dictum. In hac
-          habitasse platea dictumst. Phasellus congue leo lectus, eget molestie tortor tempus quis. Phasellus non ornare
-          sem. Curabitur ac ligula fringilla dui ultrices lacinia. Vivamus maximus mauris dolor, a feugiat felis
-          vestibulum a. Fusce euismod magna ex, luctus accumsan dolor lobortis eu.
-          Quisque id neque vel dui suscipit euismod. Suspendisse dui ipsum, condimentum sed ex sit amet, elementum
-          eleifend orci. Nunc sapien est, mattis a est a, pulvinar facilisis diam. Vestibulum ante ipsum primis in
-          faucibus orci luctus et ultrices posuere cubilia curae; Donec blandit pretium semper. Aliquam non lacus
-          vulputate, hendrerit odio et, aliquam lectus. Aliquam tellus ipsum, viverra quis magna ac, laoreet bibendum
-          enim. Nam tempor auctor accumsan. Donec tellus felis, molestie et augue quis, semper sollicitudin augue.
-          Aenean quis lacus accumsan, mollis dui id, tincidunt orci. Donec leo ante, efficitur ac nunc scelerisque,
-          vulputate tincidunt nunc. Nunc interdum dui et metus tempor elementum. Fusce nec dolor volutpat, eleifend est
-          eu, tristique velit.
-        </div>
-        <div class="wrapper">
-          <div class="homepage-button button-square">
-            <div class="overlay">
-              <img src="images/assets/pizza-4.jpg" alt="image">
+
+          <div class="carousel" data-flickity='{ "autoPlay": true, "prevNextButtons": false }'>
+            <div class="carousel-cell">
+              <div class="opinion-card">
+                <div class="opinion-image homepage-button button-square">
+                  <img src="images/assets/pizza-3.jpg" alt="image">
+                </div>
+                <div class="opinion-text">
+                  <p>AMAZING SERVICE!</p>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus tempus urna faucibus felis auctor,
+                    eu vulputate justo vulputate. Suspendisse potenti. Aliquam tempor nulla nec pharetra facilisis.</p>
+                  <p>– Margaret Osborne</p>
+                </div>
+              </div>
             </div>
-            <p>
-              <i class="fas fa-heart"></i>
-              <i class="fas fa-share-alt"></i>
-            </p>
+            <div class="carousel-cell">
+              <div class="opinion-card">
+                <div class="opinion-image homepage-button button-square">
+                  <img src="images/assets/pizza-3.jpg" alt="image">
+                </div>
+                <div class="opinion-text">
+                  <p>AMAZING SERVICE!</p>
+                  <p>Ut consectetur, libero ut fermentum dictum, metus lacus gravida augue, vel euismod augue orci
+                    rutrum erat. Maecenas eu rutrum metus, a vestibulum dolor.</p>
+                  <p>– Margaret Osborne</p>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-cell">
+              <div class="opinion-card">
+                <div class="opinion-image homepage-button button-square">
+                  <img src="images/assets/pizza-3.jpg" alt="image">
+                </div>
+                <div class="opinion-text">
+                  <p>AMAZING SERVICE!</p>
+                  <p>Maecenas ex augue, vestibulum at congue sed, mattis sed elit. Praesent vestibulum nisl nec purus
+                    malesuada bibendum. Fusce ipsum ligula, vestibulum vitae lectus sed, luctus laoreet lectus.</p>
+                  <p>– Margaret Osborne</p>
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="homepage-button button-square">
-            <div class="overlay">
-              <img src="images/assets/pizza-5.jpg" alt="image">
-            </div>            <p>
-              <i class="fas fa-heart"></i>
-              <i class="fas fa-share-alt"></i>
-            </p>
+          <div class="wrapper">
+            <div class="homepage-button button-square">
+              <div class="overlay">
+                <img src="images/assets/pizza-4.jpg" alt="image">
+              </div>
+              <p>
+                <i class="fas fa-heart"></i>
+                <i class="fas fa-share-alt"></i>
+              </p>
+            </div>
+            <div class="homepage-button button-square">
+              <div class="overlay">
+                <img src="images/assets/pizza-5.jpg" alt="image">
+              </div>
+              <p>
+                <i class="fas fa-heart"></i>
+                <i class="fas fa-share-alt"></i>
+              </p>
+            </div>
+            <div class="homepage-button button-square">
+              <div class="overlay">
+                <img src="images/assets/pizza-6.jpg" alt="image">
+              </div>
+              <p>
+                <i class="fas fa-heart"></i>
+                <i class="fas fa-share-alt"></i>
+              </p>
+            </div>
+            <div class="homepage-button button-square">
+              <div class="overlay">
+                <img src="images/assets/pizza-7.jpg" alt="image">
+              </div>
+              <p>
+                <i class="fas fa-heart"></i>
+                <i class="fas fa-share-alt"></i>
+              </p>
+            </div>
+            <div class="homepage-button button-square">
+              <div class="overlay">
+                <img src="images/assets/pizza-8.jpg" alt="image">
+              </div>
+              <p>
+                <i class="fas fa-heart"></i>
+                <i class="fas fa-share-alt"></i>
+              </p>
+            </div>
+            <div class="homepage-button button-square">
+              <div class="overlay">
+                <img src="images/assets/pizza-9.jpg" alt="image">
+              </div>
+              <p>
+                <i class="fas fa-heart"></i>
+                <i class="fas fa-share-alt"></i>
+              </p>
+            </div>
           </div>
-          <div class="homepage-button button-square">
-            <div class="overlay">
-              <img src="images/assets/pizza-6.jpg" alt="image">
-            </div>            <p>
-              <i class="fas fa-heart"></i>
-              <i class="fas fa-share-alt"></i>
-            </p>
+          <div class="wrapper">
+            <a href="#">View more on Instagram</a>
           </div>
-          <div class="homepage-button button-square">
-            <div class="overlay">
-              <img src="images/assets/pizza-7.jpg" alt="image">
-            </div>            <p>
-              <i class="fas fa-heart"></i>
-              <i class="fas fa-share-alt"></i>
-            </p>
-          </div>
-          <div class="homepage-button button-square">
-            <div class="overlay">
-              <img src="images/assets/pizza-8.jpg" alt="image">
-            </div>            <p>
-              <i class="fas fa-heart"></i>
-              <i class="fas fa-share-alt"></i>
-            </p>
-          </div>
-          <div class="homepage-button button-square">
-            <div class="overlay">
-              <img src="images/assets/pizza-9.jpg" alt="image">
-            </div>            <p>
-              <i class="fas fa-heart"></i>
-              <i class="fas fa-share-alt"></i>
-            </p>
-          </div>
-        </div>
-        <div class="wrapper">
-          <a href="#">View more on Instagram</a>
         </div>
       </div>
     </section>
@@ -341,6 +374,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.1.0/handlebars.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
   <script src="vendor/range-slider.min.js"></script>
+  <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
   <script src="js/app.js" type="module"></script>
 </body>
 
