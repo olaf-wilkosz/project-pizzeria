@@ -124,7 +124,17 @@ class Booking {
 
     for (let table of thisBooking.dom.tables) {
       if (table.dataset.table == thisBooking.selectedTable) {
-        table.classList.add('active');
+
+        const startHour = utils.hourToNumber(thisBooking.hourPicker.value);
+        for (let hourBlock = startHour; hourBlock < startHour + thisBooking.hoursAmount.value; hourBlock += 0.5) {
+          if (thisBooking.booked[thisBooking.datePicker.value][hourBlock].includes(parseInt(thisBooking.selectedTable))) {
+            alert('Selected table is not available within the chosen duration!\nPlease shorten the duration or choose different table.');
+            table.classList.remove('active');
+            return;
+          } else {
+            table.classList.add('active');
+          }
+        }
       } else {
         table.classList.remove('active');
       }
@@ -166,7 +176,17 @@ class Booking {
     const thisBooking = this;
 
     if (!thisBooking.selectedTable) {
-      alert('Wybierz stolik');
+      alert('Please select the table.');
+      return;
+    }
+
+    if (!thisBooking.dom.phone.value) {
+      alert('Please provide the phone number.');
+      return;
+    }
+
+    if (!thisBooking.dom.address.value) {
+      alert('Please provide the e-mail address.');
       return;
     }
 
@@ -267,7 +287,6 @@ class Booking {
         if (table.classList.contains('booked')) {
           return;
         }
-
         thisBooking.selectedTable = table.dataset.table;
         thisBooking.updateDOM();
       });
