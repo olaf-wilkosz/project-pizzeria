@@ -119,43 +119,45 @@
 .carousel {
   width: 604px;
   min-height: 193px;
-  margin: 48px 0;
+  margin: 48px 0 31px;
 
+  .carousel-cell {
+    width: 100%;
+  }
+
+  .flickity-page-dots {
+    bottom: 36px;
+  }
 }
 
 .opinion-card {
   position: relative;
-  display: inline-block;
+  display: flex;
   min-height: 193px;
+  margin: ($base-size * 3.5) auto;
 
   .opinion-image {
-    position: absolute;
-    width: 193px;
+    min-width: 193px;
+    min-height: 193px;
+
+    img {
+      position: relative;
+    }
   }
 
   .opinion-text {
-    position: absolute;
-    padding-left: 230px;
-    width: 604px;
-    min-height: 193px;
-    margin: 12px 0 auto;
-    align-content: center;
+    padding-left: 37px;
+    min-height: 230px;
+    margin: ($base-size * 1.5) 3px auto;
 
     p {
-      color: $color-dark;
-      font-family: Lato;
-      font-size: 14px;
-      font-weight: 400;
-      font-style: normal;
-      line-height: 23px;
-    }
-
-    p:first-of-type {
-      font-weight: 700;
+      line-height: 22px;
     }
 
     p:last-of-type {
       font-style: italic;
+      margin-top: 25px;
+      letter-spacing: 0.1px;
     }
   }
 }

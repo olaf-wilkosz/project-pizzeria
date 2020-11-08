@@ -174,10 +174,8 @@
 
     }
 
-    &.clicked {
-      cursor: not-allowed;
-      color: lighten($color-dark, 40%);
-      border: 2px solid $color-main;
+    &.active {
+      color: darken($color-success, 40%);
 
       &::after {
         position: absolute;
@@ -186,11 +184,12 @@
         height: 100%;
         left: 0;
         top: 0;
-        background: $color-dark;
+        background: $color-success;
         opacity: 0.4;
       }
 
     }
+
   }
 
   [data-table="1"] {
