@@ -126,13 +126,21 @@ class Booking {
       if (table.dataset.table == thisBooking.selectedTable) {
 
         const startHour = utils.hourToNumber(thisBooking.hourPicker.value);
-        for (let hourBlock = startHour; hourBlock < startHour + thisBooking.hoursAmount.value; hourBlock += 0.5) {
-          if (thisBooking.booked[thisBooking.datePicker.value][hourBlock].includes(parseInt(thisBooking.selectedTable))) {
-            alert('Selected table is not available within the chosen duration!\nPlease shorten the duration or choose different table.');
-            table.classList.remove('active');
-            return;
-          } else {
-            table.classList.add('active');
+        if (startHour + thisBooking.hoursAmount.value > settings.hours.close) {
+          alert('Selected duration exceeds the opening hours!\nPlease shorten the duration or change the begining time.');
+          table.classList.remove('active');
+          return;
+        } else {
+          for (let hourBlock = startHour; hourBlock < startHour + thisBooking.hoursAmount.value; hourBlock += 0.5) {
+            if (typeof thisBooking.booked[thisBooking.datePicker.value][hourBlock] == 'undefined') {
+              table.classList.add('active');
+            } else if (thisBooking.booked[thisBooking.datePicker.value][hourBlock].includes(parseInt(thisBooking.selectedTable))) {
+              alert('Selected table is not available within the chosen duration!\nPlease shorten the duration or choose different table.');
+              table.classList.remove('active');
+              return;
+            } else {
+              table.classList.add('active');
+            }
           }
         }
       } else {
@@ -277,6 +285,11 @@ class Booking {
     });
 
     thisBooking.dom.hourPicker.addEventListener('updated', function () {
+      thisBooking.selectedTable = null;
+      thisBooking.updateDOM();
+    });
+
+    thisBooking.dom.hoursAmount.addEventListener('updated', function () {
       thisBooking.selectedTable = null;
       thisBooking.updateDOM();
     });
