@@ -287,6 +287,7 @@ class Booking {
         if (table.classList.contains('booked')) {
           return;
         }
+
         thisBooking.selectedTable = table.dataset.table;
         thisBooking.updateDOM();
       });

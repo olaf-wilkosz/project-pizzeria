@@ -10,8 +10,38 @@
   display: inline-flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  position: static;
 
   a {
+    margin: 0;
+    padding: 0;
+
+    p {
+      transition: 0.5s ease-in-out;
+    }
+
+    p:nth-child(2) {
+      opacity: 0;
+      font-family: $font-text;
+      font-size: 14px;
+      font-weight: $font-light;
+      text-transform: initial;
+      top: 100px;
+    }
+
+    &:hover {
+      p:nth-child(1) {
+        transform: translate(-50%, -20px);
+      }
+
+      p:nth-child(2) {
+        opacity: 1;
+        transform: translate(-50%, -40px);
+      }
+    }
+  }
+
+  a:last-child {
     color: $color-main;
     margin: 24px 0 0;
   }
@@ -123,6 +153,7 @@
 
   .carousel-cell {
     width: 100%;
+    transition: opacity 0.1s ease-in-out;
   }
 
   .flickity-page-dots {

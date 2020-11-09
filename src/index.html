@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
   <link rel="stylesheet" href="vendor/range-slider.min.css">
   <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/flickity-fade@1/flickity-fade.css">
   <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -69,16 +70,22 @@
   <div id="pages">
     <section id="home">
       <div class="home-wrapper container">
-        <div class="wrapper">
-          <div class="homepage-button button-small">
-            <p>Order online</p>
-            <img src="images/assets/pizza-1.jpg" alt="image">
-          </div>
+        <div class="wrapper main-nav">
+          <a href="#order">
+            <div class="homepage-button button-small">
+              <p>Order online</p>
+              <p>Delicious food delivered to your door</p>
+              <img src="images/assets/pizza-1.jpg" alt="image">
+            </div>
+          </a>
 
-          <div class="homepage-button button-small">
-            <p>Book a table</p>
-            <img src="images/assets/pizza-2.jpg" alt="image">
-          </div>
+          <a href="#booking">
+            <div class="homepage-button button-small">
+              <p>Book a table</p>
+              <p>Feel like you visit Italy</p>
+              <img src="images/assets/pizza-2.jpg" alt="image">
+            </div>
+          </a>
 
           <div class="homepage-button button-big">
             <p>Opening hours:</p>
@@ -87,7 +94,7 @@
         </div>
         <div class="wrapper">
 
-          <div class="carousel" data-flickity='{ "autoPlay": 3000, "prevNextButtons": false }'>
+          <div class="carousel" data-flickity='{ "autoPlay": 3000, "wrapAround": true, "fade": true, "prevNextButtons": false }'>
             <div class="carousel-cell">
               <div class="opinion-card">
                 <div class="opinion-image homepage-button button-square">
@@ -104,26 +111,26 @@
             <div class="carousel-cell">
               <div class="opinion-card">
                 <div class="opinion-image homepage-button button-square">
-                  <img src="images/assets/pizza-3.jpg" alt="image">
+                  <img src="images/assets/pizza-2.jpg" alt="image">
                 </div>
                 <div class="opinion-text">
-                  <p>AMAZING SERVICE!</p>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam egestas viverra tortor, eu
-                    ullamcorper dui imperdiet nec. Nunc sed dolor at elit lobortis sodales.</p>
-                  <p>– Margaret Osborne</p>
+                  <p>IT TASTES LIKE HEAVEN!</p>
+                  <p>Maecenas consequat diam nec sollicitudin congue. Aenean porttitor porttitor quam, condimentum interdum
+                    metus congue sed. Donec at nulla ipsum.</p>
+                  <p>– Louise Brough</p>
                 </div>
               </div>
             </div>
             <div class="carousel-cell">
               <div class="opinion-card">
                 <div class="opinion-image homepage-button button-square">
-                  <img src="images/assets/pizza-3.jpg" alt="image">
+                  <img src="images/assets/pizza-1.jpg" alt="image">
                 </div>
                 <div class="opinion-text">
-                  <p>AMAZING SERVICE!</p>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam egestas viverra tortor, eu
-                    ullamcorper dui imperdiet nec. Nunc sed dolor at elit lobortis sodales.</p>
-                  <p>– Margaret Osborne</p>
+                  <p>GREAT DEAL!</p>
+                  <p>Fusce lacinia augue massa, non tincidunt tortor auctor quis. Vestibulum ut pretium nisl. Etiam id
+                    tellus tempus, commodo ligula vehicula, porta magna.</p>
+                  <p>– Pauline Betz</p>
                 </div>
               </div>
             </div>
@@ -375,6 +382,7 @@
   <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
   <script src="vendor/range-slider.min.js"></script>
   <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+  <script src="https://unpkg.com/flickity-fade@1/flickity-fade.js"></script>
   <script src="js/app.js" type="module"></script>
 </body>
 
