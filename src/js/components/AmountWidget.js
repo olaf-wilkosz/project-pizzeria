@@ -2,10 +2,12 @@ import { select, settings } from '../settings.js';
 import BaseWidget from './BaseWidget.js';
 
 class AmountWidget extends BaseWidget {
-  constructor(element) {
+  constructor(element, parseHalf) {
     super(element, settings.amountWidget.defaultValue);
 
     const thisWidget = this;
+
+    thisWidget.parseHalf = parseHalf ? true : false;
 
     thisWidget.getElements(element);
     thisWidget.initActions();
@@ -33,6 +35,12 @@ class AmountWidget extends BaseWidget {
     thisWidget.dom.input.value = thisWidget.value;
   }
 
+  parseValue(value) {
+    const thisWidget = this;
+
+    return thisWidget.parseHalf ? parseFloat(value) : parseInt(value);
+  }
+
   initActions() {
     const thisWidget = this;
 
@@ -43,12 +51,12 @@ class AmountWidget extends BaseWidget {
 
     thisWidget.dom.linkDecrease.addEventListener('click', function (event) {
       event.preventDefault();
-      thisWidget.setValue(thisWidget.value - 1);
+      thisWidget.setValue(thisWidget.value - (thisWidget.parseHalf ? 0.5 : 1));
     });
 
     thisWidget.dom.linkIncrease.addEventListener('click', function (event) {
       event.preventDefault();
-      thisWidget.setValue(thisWidget.value + 1);
+      thisWidget.setValue(thisWidget.value + (thisWidget.parseHalf ? 0.5 : 1));
     });
   }
 }
